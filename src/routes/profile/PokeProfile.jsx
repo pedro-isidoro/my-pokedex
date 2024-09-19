@@ -16,14 +16,16 @@ const PokeProfile = () => {
 
   return (
     <section className="w-full h-full flex flex-col items-center justify-center">
-      <div className="mainPokemon w-[100%] md:w-[50%] max-h-[600px] flex flex-col items-center gap-4 text-white bg-slate-900/80 overflow-y-auto scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-black px-2 rounded-xl">
-        <section className="w-full flex flex-col justify-center items-center gap-2">
-          <img
-            src={info.pokemonImage2}
-            alt={info.pokemonName}
-            className="w-[50%]"
-          />
-          <hr className="w-[50%] h-2 border-white" />
+      <div className="mainPokemon w-[100%] md:w-[80%] lg:w-[60%] max-h-[660px] flex flex-col items-center gap-4 text-white bg-slate-900/80 overflow-y-auto scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-black px-2 rounded-xl">
+        <section className="w-full flex flex-col sm:flex-row justify-center items-center">
+          <div className="flex flex-col items-center gap-2 sm:gap-8">
+            <img
+              src={info.pokemonImage2}
+              alt={info.pokemonName}
+              className="w-[50%] sm:w-[100%]"
+            />
+            <hr className="w-[50%] h-2 border-white" />
+          </div>
           <div className="w-full h-auto flex flex-col gap-4 py-2 items-center">
             <h1 className="text-center text-lg font-semibold">
               -{info.pokemonName}-
@@ -45,15 +47,15 @@ const PokeProfile = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[100%] ">
+              <div className="w-[100%]">
                 <ul className="gap-1 flex flex-col items-center">
-                  <li className="w-[60%] bg-amber-600 flex justify-between mb-1 px-2 rounded-md">
+                  <li className="w-[60%] sm:w-[80%] bg-amber-600 flex justify-between mb-1 px-2 rounded-md">
                     <p>XP</p> <p>{info.pokemonBaseExperience} ptos</p>
                   </li>
                   {info.pokemonStats.map((stat, key) => (
                     <li
                       key={key}
-                      className="w-[60%] bg-amber-600 flex justify-between mb-1 px-2 rounded-md"
+                      className="w-[60%] sm:w-[80%] bg-amber-600 flex justify-between mb-1 px-2 rounded-md"
                     >
                       <p>{stat.stat.name.toUpperCase()}</p>
                       <p>{stat.base_stat} ptos</p>
@@ -68,14 +70,14 @@ const PokeProfile = () => {
           {info.pokemonImageShiny == null ? (
             <></>
           ) : (
-            <div className="w-full flex flex-col items-center gap-4">
-              <h2 className="text-base font-semibold">Variações</h2>
+            <div className="w-full flex flex-col items-center">
+              <h2 className="text-base font-semibold mb-4">Variações</h2>
               <img
                 src={info.pokemonImageShiny}
                 alt={info.pokemonName}
-                className="w-[40%] scale-x-[-1]"
+                className="w-[50%] sm:w-[30%] scale-x-[-1] bg-blue-300/20"
               />
-              <hr className="w-[50%] h-2 border-white" />
+              <hr className="w-[50%] sm:w-[30%] h-2 border-white" />
             </div>
           )}
           <div className="w-full flex flex-col items-center gap-8">

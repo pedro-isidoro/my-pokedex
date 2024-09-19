@@ -5,7 +5,7 @@ const initialState = {
   allPokemons: [],
   typePokemon: " ",
   namePokemon: "",
-  timePokemon: [],
+  teamPokemon: [1],
 };
 
 const cartSlice = createSlice({
@@ -33,10 +33,10 @@ const cartSlice = createSlice({
       }
     },
     addPokemonToCart: (state, action) => {
-      state.timePokemon = [...state.timePokemon, { ...action.payload }];
+      state.teamPokemon = [...state.teamPokemon, { ...action.payload }];
     },
     removePokemonFromCart: (state, action) => {
-      state.timePokemon = state.products.filter(
+      state.teamPokemon = state.teamPokemon.filter(
         (pokemon) => pokemon.id !== action.payload
       );
     },

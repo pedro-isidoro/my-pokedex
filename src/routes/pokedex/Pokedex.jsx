@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import PokemonsTypes from "../../style/PokemonsTypes";
 import showAllPokemons from "../../js/ShowAllPokemons";
 import { filteredNamePokemon } from "../../components/redux/pokemonCart/slice";
+import TeamPokemon from "../../components/teamPokemon/TeamPokemon";
 
 function Pokedex() {
   const [pokemonsTypes, setPokemonsTypes] = useState(false);
@@ -10,13 +11,12 @@ function Pokedex() {
   const [previousPokemon, setPreviousPokemon] = useState(0);
   const [nextPokemon, setNextPokemon] = useState(5);
 
-  const { allPokemons, typePokemon, namePokemon } = useSelector(
+  const { allPokemons, typePokemon, namePokemon, teamPokemon } = useSelector(
     (rootReducer) => rootReducer.pokeReducer
   );
 
   const dispatch = useDispatch();
   const handleNameSearch = (name) => {
-    // console.log("Dispatching type:", name);
     //Condinal, para que quando não digitar nada, ou apagar tudo, ele irá voltar a estaca zero
     name.length > 0
       ? dispatch(filteredNamePokemon(name))
@@ -24,8 +24,8 @@ function Pokedex() {
   };
 
   return (
-    <section className="w-full h-screen flex flex-col items-center pt-2 pb-20 gap-6 mb-36">
-      <div className="flex flex-col justify-center items-center gap-4 mt-4">
+    <section className="w-full h-screen flex flex-col items-center pt-2 pb-20 gap-6 mb-36 sm:mb-[-30px]">
+      <div className="h-full flex flex-col justify-center items-center gap-4 mt-4">
         <input
           type="search"
           name="pokemon name"
@@ -58,7 +58,7 @@ function Pokedex() {
           />
         )}
       </div>
-      <ul className="w-full pt-4 md:px-10 flex flex-wrap justify-center gap-x-6 gap-y-4">
+      <ul className="w-full sm:w-[80%] md:w-[60%] xl:w-[50%] pt-4 flex flex-wrap justify-center gap-x-6 gap-y-4">
         {allPokemons.length > 0 ? (
           showAllPokemons(
             allPokemons,
@@ -103,6 +103,7 @@ function Pokedex() {
           </button>
         )}
       </div>
+      {teamPokemon.length >= 1 ? <TeamPokemon></TeamPokemon> : <>Não Tem</>}
     </section>
   );
 }

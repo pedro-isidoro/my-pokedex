@@ -8,10 +8,7 @@ import { usePokemons } from "./components/hook/pokemonsRequest";
 function App() {
   const dispatch = useDispatch();
 
-  // dispatch(addPokemons(pokemonList));
-  const { dataList } = usePokemons(60);
-  // console.log(dataList);
-  // console.log(dataList[0].data);
+  const { dataList } = usePokemons(1000);
 
   function handlePokemons(){
     dispatch(addPokemons(dataList));

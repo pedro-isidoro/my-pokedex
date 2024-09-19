@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import PokemonsTypes from "../../style/PokemonsTypes";
 import showAllPokemons from "../../js/ShowAllPokemons";
 import { filteredNamePokemon } from "../../components/redux/pokemonCart/slice";
-import filteredPokemonsPerType from "../../js/FilterPerType";
 
 function Pokedex() {
   const [pokemonsTypes, setPokemonsTypes] = useState(false);
@@ -14,16 +13,6 @@ function Pokedex() {
   const { allPokemons, typePokemon, namePokemon } = useSelector(
     (rootReducer) => rootReducer.pokeReducer
   );
-  console.log("AllPokemons: ", allPokemons)
-
-  const qtdPokemonsFilteredPerType = filteredPokemonsPerType(
-    allPokemons,
-    typePokemon,
-    previousPokemon,
-    nextPokemon
-  ).length
-
-  console.log(qtdPokemonsFilteredPerType);
 
   const dispatch = useDispatch();
   const handleNameSearch = (name) => {
@@ -35,7 +24,7 @@ function Pokedex() {
   };
 
   return (
-    <section className="w-full h-screen flex flex-col items-center pt-2 pb-20 gap-6 mb-16">
+    <section className="w-full h-screen flex flex-col items-center pt-2 pb-20 gap-6 mb-36">
       <div className="flex flex-col justify-center items-center gap-4 mt-4">
         <input
           type="search"
@@ -98,7 +87,7 @@ function Pokedex() {
             <i className="fa-solid fa-arrow-right hover:cursor-pointer -rotate-180" />
           </button>
         )}
-        {(nextPokemon !== allPokemons.length - 1 ) ? (
+        {nextPokemon !== allPokemons.length - 1 ? (
           <button
             className="px-4 bg-yellow-400 text-black rounded-lg hover:bg-black hover:text-yellow-400"
             onClick={() => {

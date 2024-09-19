@@ -12,7 +12,6 @@ export default function showAllPokemons(
   // console.log("type: ", typePokemon)
   // console.log("name: ", namePokemon)
   if (namePokemon.trim() !== "" && namePokemon.length > 0) {
-    console.log("NameConditional");
     return filteredPokemonsPerName(
       allPokemons,
       namePokemon,

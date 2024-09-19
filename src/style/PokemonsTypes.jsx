@@ -55,7 +55,7 @@ const PokemonsTypes = () => {
         </li>
         <li
           className="w-24 text-center border-[1px] border-yellow-500 text-yellow-500 px-2 rounded-md hover:cursor-pointer hover:scale-90"
-          onClick={() => handleTypeClick("eletric")}
+          onClick={() => handleTypeClick("electric")}
         >
           Electric
         </li>

@@ -67,7 +67,7 @@ function Pokedex() {
             nextPokemon
           )
         ) : (
-          <p className="pt-14">Nenhum pokémon encontrado!</p>
+          <p className="pt-14 text-white">Carregando...</p>
         )}
       <div className="flex gap-3">
         {/* {previousPokemon === 0 ? (

@@ -12,7 +12,7 @@ export default function filteredPokemonsPerType(
   const allPokemonsLength = allPokemons.filter((pokemon) => {
     const types = pokemon.data.types.map((t) => t.type.name);
     return types.includes(Pokemontype);
-  });
+  }).length;
   // console.log(allPokemonsLength.length)
   return (
     <div className="w-full sm:w-[80%] md:w-[60%] xl:w-[50%] flex flex-col items-center gap-8">
@@ -48,7 +48,7 @@ export default function filteredPokemonsPerType(
           nextPokemon={nextPokemon}
           allPokemons={allPokemonsLength}
           click={() => {
-            if (nextPokemon !== allPokemonsLength.length - 1) {
+            if (nextPokemon !== allPokemonsLength - 1) {
               setNextPokemon(nextPokemon + 6);
               // console.log("previousPokemon: ", previousPokemon);
               // console.log("nextPokemon: ", nextPokemon);

@@ -8,12 +8,13 @@ import { usePokemons } from "./components/hook/pokemonsRequest";
 function App() {
   const dispatch = useDispatch();
 
-  const { dataList } = usePokemons(60);
+  const { dataList } = usePokemons(1025);
 
   function handlePokemons(){
     dispatch(addPokemons(dataList));
   }
   handlePokemons();
+  // console.log("AllPokemons: ", dataList)
   
   return (
     <div className="w-full h-full bg-mobileHome sm:bg-home bg-cover bg-center">

@@ -25,20 +25,19 @@ export const ForwardArrow = ({
   allPokemons,
   click,
 }) => {
-  // console.log("previousPokemon: ", previousPokemon);
-  // console.log("nextPokemon: ", nextPokemon);
+  // console.log("allPokemons: ", allPokemons)
   return (
     <div>
-      {nextPokemon !== allPokemons.length - 1 ? (
+      {nextPokemon === allPokemons ? (
+        <button className="px-4 bg-black text-yellow-400 rounded-lg hover:cursor-not-allowed">
+          <i className="fa-solid fa-arrow-right" />
+        </button>
+      ) : (
         <button
           className="px-4 bg-yellow-400 text-black rounded-lg hover:bg-black hover:text-yellow-400"
           onClick={click}
         >
           <i className="fa-solid fa-arrow-right hover:cursor-pointer" />
-        </button>
-      ) : (
-        <button className="px-4 bg-black text-yellow-400 rounded-lg hover:cursor-not-allowed">
-          <i className="fa-solid fa-arrow-right" />
         </button>
       )}
     </div>

@@ -32,8 +32,12 @@ const cartSlice = createSlice({
       }
     },
     addPokemonToCart: (state, action) => {
+      console.log("Action: ", action.payload)
+      const pokemonIsAlreadyInTeam = state.teamPokemon.some(pokemon => pokemon.id === action.payload.id)
       if (state.teamPokemon.length >= 6) {
-        alert("Time Pokemon Cheio");
+        alert("Time Pokemon Lotado! Caso queira adicionar outro Pokemon, remova um da sua equipe!!!");
+      } else if (pokemonIsAlreadyInTeam) {
+        alert("Você já tem esse Pokemon na equipe!! Escolha outro, por gentileza!")
       } else {
         state.teamPokemon = [...state.teamPokemon, { ...action.payload }];
       }

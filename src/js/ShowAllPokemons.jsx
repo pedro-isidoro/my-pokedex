@@ -45,12 +45,12 @@ export default function showAllPokemons(allPokemons, typePokemon, namePokemon) {
           <ForwardArrow
             previousPokemon={previousPokemon}
             nextPokemon={nextPokemon}
-            allPokemons={allPokemons}
+            allPokemons={allPokemons.length}
             click={() => {
               if (nextPokemon !== allPokemons.length - 1) {
-                setNextPokemon(nextPokemon + 6);
                 // console.log("previousPokemon: ", previousPokemon);
                 // console.log("nextPokemon: ", nextPokemon);
+                setNextPokemon(nextPokemon + 6);
                 setPreviousPokemon(previousPokemon + 6);
               }
             }}

@@ -19,7 +19,7 @@ const TeamPokemonModal = ({ isOpen, teamPokemon, setModalClosed }) => {
   if (isOpen) {
     return (
       <div className="h-full w-full fixed z-10 bg-black/60 left-0 top-0 flex justify-center items-center">
-        <div className="h-[80%] w-[90%] bg-slate-400/80 py-4 px-2 flex flex-col items-center gap-3 rounded-3xl">
+        <div className="h-[78%] w-[90%] sm:w-[70%] md:w-[50%] xl:w-[40%] bg-slate-400/80 p-2 flex flex-col items-center gap-3 rounded-2xl">
           <div className="self-end">
             <i
               className="fa-solid fa-x text-black hover:cursor-pointer"
@@ -39,7 +39,7 @@ const TeamPokemonModal = ({ isOpen, teamPokemon, setModalClosed }) => {
                   <img
                     src={pokemon.sprites.front_default}
                     alt={pokemon.name}
-                    className="w-[25%]"
+                    className="w-[25%] sm:w-[20%] lg:w-[18%]"
                   />
                   <div className="flex flex-col justify-center items-end">
                     <h2>{pokemon.name.toUpperCase()}</h2>

@@ -12,8 +12,8 @@ export default function filteredPokemonsPerName(
   const allPokemonsLength = allPokemons.filter((pokemon) => {
     const name = pokemon.data.name;
     return name.includes(PokemonName);
-  });
-  // console.log(allPokemonsLength.length);
+  }).length;
+  console.log(allPokemonsLength.length);
   return (
     <div className="w-full sm:w-[80%] md:w-[60%] xl:w-[50%] flex flex-col items-center gap-8">
       <ul className="w-full pt-4 flex flex-wrap justify-center gap-x-6 gap-y-4">
@@ -48,10 +48,10 @@ export default function filteredPokemonsPerName(
           nextPokemon={nextPokemon}
           allPokemons={allPokemonsLength}
           click={() => {
-            if (nextPokemon !== allPokemonsLength.length - 1) {
-              setNextPokemon(nextPokemon + 6);
+            if (nextPokemon !== allPokemonsLength - 1) {
               // console.log("previousPokemon: ", previousPokemon);
               // console.log("nextPokemon: ", nextPokemon);
+              setNextPokemon(nextPokemon + 6);
               setPreviousPokemon(previousPokemon + 6);
             }
           }}

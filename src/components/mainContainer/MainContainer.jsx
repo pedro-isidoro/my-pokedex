@@ -5,7 +5,7 @@ function MainContainer() {
     <main className="w-full h-auto md:h-[530px] xl:h-[540px] flex justify-center text-justify items-center pt-4 px-2">
       <section className="w-full sm:w-[80%] md:w-[90%] xl:w-[50%] bg-slate-700 bg-opacity-60 sm:bg-opacity-70 px-6 py-6 gap-6 flex flex-col md:flex-row items-center">
         <img
-          src="src/images/pokemon-image.jpg"
+          src="/images/pokemon-image.jpg"
           alt="Imagem Pokemon"
           className="w-[80%] sm:w-[70%] md:w-[40%] xl:hidden"
         />

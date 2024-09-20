@@ -7,7 +7,7 @@ export default defineConfig({
   //https://dev.to/andrewezeani/how-to-create-absolute-imports-in-vite-react-app-a-step-by-step-guide-28co#prerequisite
   resolve: {
     alias: {
-      src: "/src",
+      src: "./src",
     },
   },
 });

@@ -6,7 +6,7 @@ function Footer() {
       <ul className="flex items-center gap-4 text-slate-200">
         <li className="hover:cursor-pointer hover:opacity-60">
           <a href="https://www.pokemon.com/br" target="_blank">
-            <img src="/images/favicon-16x16.png" alt="Pokeball" />
+            <img src="./src/images/favicon-16x16.png" alt="Pokeball" />
           </a>
         </li>
         <li className="hover:cursor-pointer hover:opacity-60">

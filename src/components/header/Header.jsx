@@ -10,7 +10,7 @@ function Header() {
   };
   return (
     <header className="w-full h-14 flex flex-row justify-between items-center pt-8 pb-10">
-      <Link to={"/"}>
+      <Link to={"./src/"}>
         <img
           className="w-46 h-16"
           src="/images/pokemon-logo.png"
@@ -20,7 +20,7 @@ function Header() {
       <Link to={"pokedex"}>
         <img
           className="w-16 h-10"
-          src="/images/pokedex.png"
+          src="./src/images/pokedex.png"
           alt="Pokedex Logo"
           onClick={() => handleTypeClick(" ")}
         />

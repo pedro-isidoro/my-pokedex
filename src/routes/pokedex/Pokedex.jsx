@@ -69,38 +69,6 @@ function Pokedex() {
         ) : (
           <p className="pt-14 text-white">Carregando...</p>
         )}
-      <div className="flex gap-3">
-        {/* {previousPokemon === 0 ? (
-          <button className="px-4 bg-black text-yellow-400 rounded-lg hover:cursor-not-allowed">
-            <i className="fa-solid fa-arrow-right -rotate-180" />
-          </button>
-        ) : (
-          <button
-            className="px-4 bg-yellow-400 text-black rounded-lg hover:bg-black hover:text-yellow-400"
-            onClick={() => {
-              setPreviousPokemon(previousPokemon - 6),
-                setNextPokemon(nextPokemon - 6);
-            }}
-          >
-            <i className="fa-solid fa-arrow-right hover:cursor-pointer -rotate-180" />
-          </button>
-        )}
-        {nextPokemon !== allPokemons.length - 1 ? (
-          <button
-            className="px-4 bg-yellow-400 text-black rounded-lg hover:bg-black hover:text-yellow-400"
-            onClick={() => {
-              setPreviousPokemon(previousPokemon + 6),
-                setNextPokemon(nextPokemon + 6);
-            }}
-          >
-            <i className="fa-solid fa-arrow-right hover:cursor-pointer" />
-          </button>
-        ) : (
-          <button className="px-4 bg-black text-yellow-400 rounded-lg hover:cursor-not-allowed">
-            <i className="fa-solid fa-arrow-right" />
-          </button>
-        )} */}
-      </div>
       {teamPokemon.length >= 1 ? (
         <TeamPokemon teamPokemon={teamPokemon}></TeamPokemon>
       ) : (

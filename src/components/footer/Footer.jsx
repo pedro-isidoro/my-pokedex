@@ -1,5 +1,5 @@
 import React from "react";
-const pokebalImage = "./src/images/favicon-16x16.png";
+const pokebalImage = "./public/images/favicon-16x16.png";
 
 function Footer() {
   return (

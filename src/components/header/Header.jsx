@@ -2,8 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { filteredPokemon } from "../redux/pokemonCart/slice";
-const PokemonLogo = "./src/images/pokemon-logo.png";
-const PokedexImage = "./src/images/pokedex.png";
+const PokemonLogo = "./public/images/pokemon-logo.png";
+const PokedexImage = "./public/images/pokedex.png";
 
 function Header() {
   const dispatch = useDispatch();

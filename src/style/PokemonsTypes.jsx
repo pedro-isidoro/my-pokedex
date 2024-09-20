@@ -9,8 +9,8 @@ const PokemonsTypes = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-start fixed top-48 left-0 transition-all z-10">
-      <ul className="h-54 w-[80%] sm:w-[70%] md:w-[60%] xl:w-[50%] py-4 flex justify-center flex-wrap gap-3 bg-slate-950 sm:bg-opacity-90 rounded-xl">
+    <div className="w-full flex justify-center items-start relative">
+      <ul className="h-54 w-[180%] md:w-[250%] py-4 flex justify-center items-center flex-wrap gap-3 bg-slate-950 sm:bg-opacity-90 rounded-xl absolute top-14  z-10">
         <li
           className="w-24 text-center border-[1px] border-green-400 text-green-400 px-2 rounded-md hover:cursor-pointer hover:scale-90"
           onClick={() => handleTypeClick("grass")}

@@ -17,7 +17,7 @@ export default function showAllPokemons(allPokemons, typePokemon, namePokemon) {
     );
   } else {
     const [previousPokemon, setPreviousPokemon] = useState(0);
-    const [nextPokemon, setNextPokemon] = useState(5);
+    const [nextPokemon, setNextPokemon] = useState(4);
     return (
       <div className="w-full sm:w-[80%] md:w-[60%] xl:w-[50%] flex flex-col items-center gap-8">
         <ul className="w-full pt-4 flex flex-wrap justify-center gap-x-6 gap-y-4">
@@ -37,21 +37,23 @@ export default function showAllPokemons(allPokemons, typePokemon, namePokemon) {
             nextPokemon={nextPokemon}
             click={() => {
               if (previousPokemon !== 0) {
-                setPreviousPokemon(previousPokemon - 6);
-                setNextPokemon(nextPokemon - 6);
+                setPreviousPokemon(previousPokemon - 5);
+                setNextPokemon(nextPokemon - 5);
               }
             }}
           />
           <ForwardArrow
-            previousPokemon={previousPokemon}
             nextPokemon={nextPokemon}
-            allPokemons={allPokemons.length}
+            allPokemons={allPokemons.length - 1}
             click={() => {
               if (nextPokemon !== allPokemons.length - 1) {
-                // console.log("previousPokemon: ", previousPokemon);
-                // console.log("nextPokemon: ", nextPokemon);
-                setNextPokemon(nextPokemon + 6);
-                setPreviousPokemon(previousPokemon + 6);
+                console.log("previousPokemon: ", previousPokemon);
+                console.log("nextPokemon: ", nextPokemon);
+                setNextPokemon(nextPokemon + 5);
+                setPreviousPokemon(previousPokemon + 5);
+              }else{
+                setPreviousPokemon(0);
+                setNextPokemon(4);
               }
             }}
           />

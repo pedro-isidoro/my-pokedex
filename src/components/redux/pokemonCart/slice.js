@@ -5,7 +5,7 @@ const initialState = {
   allPokemons: [],
   typePokemon: " ",
   namePokemon: "",
-  teamPokemon: [1],
+  teamPokemon: [],
 };
 
 const cartSlice = createSlice({
@@ -27,13 +27,16 @@ const cartSlice = createSlice({
     filteredNamePokemon: (state, action) => {
       if (action.payload && typeof action.payload === "string") {
         state.namePokemon = action.payload;
-        // console.log(action.payload)
       } else {
         console.error("Invalid action payload:", action.payload);
       }
     },
     addPokemonToCart: (state, action) => {
-      state.teamPokemon = [...state.teamPokemon, { ...action.payload }];
+      if (state.teamPokemon.length >= 6) {
+        alert("Time Pokemon Cheio");
+      } else {
+        state.teamPokemon = [...state.teamPokemon, { ...action.payload }];
+      }
     },
     removePokemonFromCart: (state, action) => {
       state.teamPokemon = state.teamPokemon.filter(

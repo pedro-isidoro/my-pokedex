@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import TypesStyle from "../../style/TypesStyle";
 import PokeInfo from "../../js/PokeInfo";
+import { addPokemonToCart } from "../../components/redux/pokemonCart/slice";
 
 const PokeProfile = () => {
   //Com isso acesso o id dado no path
@@ -10,9 +11,14 @@ const PokeProfile = () => {
 
   const { allPokemons } = useSelector((rootReducer) => rootReducer.pokeReducer);
   const data = allPokemons[index].data;
-  // console.log(data);
   const info = PokeInfo(data);
-  // console.log(info);
+
+  const dispatch = useDispatch();
+  const handleNameSearch = () => {
+      dispatch(addPokemonToCart(data));
+      // console.log("Pokemon Adicionado!!")
+      console.log("Dados adicionados: ", data)
+  };
 
   return (
     <section className="w-full h-full flex flex-col items-center justify-center">
@@ -67,6 +73,14 @@ const PokeProfile = () => {
           </div>
         </section>
         <section className="w-[100%] pt-5 flex flex-col items-center gap-4 bg-black/70 text-white rounded-t-[2rem] pb-4">
+          <div>
+            <button
+              className="w-40 py-1 rounded-xl bg-red-800 hover:cursor-pointer hover:opacity-80"
+              onClick={() => handleNameSearch()}
+            >
+              Adicionar à equipe!
+            </button>
+          </div>
           {info.pokemonImageShiny == null ? (
             <></>
           ) : (

@@ -9,7 +9,6 @@ const Pokemon = ({ pokemon, index }) => {
 
   const setColor = () => {
     const type1 = infos.pokemonTypes[0].type.name;
-    // console.log(type1);
     return getGradient(type1);
   };
 

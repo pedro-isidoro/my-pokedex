@@ -58,8 +58,7 @@ function Pokedex() {
           />
         )}
       </div>
-      <ul className="w-full sm:w-[80%] md:w-[60%] xl:w-[50%] pt-4 flex flex-wrap justify-center gap-x-6 gap-y-4">
-        {allPokemons.length > 0 ? (
+      {allPokemons.length > 0 ? (
           showAllPokemons(
             allPokemons,
             typePokemon,
@@ -70,9 +69,8 @@ function Pokedex() {
         ) : (
           <p className="pt-14">Nenhum pokémon encontrado!</p>
         )}
-      </ul>
       <div className="flex gap-3">
-        {previousPokemon === 0 ? (
+        {/* {previousPokemon === 0 ? (
           <button className="px-4 bg-black text-yellow-400 rounded-lg hover:cursor-not-allowed">
             <i className="fa-solid fa-arrow-right -rotate-180" />
           </button>
@@ -101,9 +99,13 @@ function Pokedex() {
           <button className="px-4 bg-black text-yellow-400 rounded-lg hover:cursor-not-allowed">
             <i className="fa-solid fa-arrow-right" />
           </button>
-        )}
+        )} */}
       </div>
-      {teamPokemon.length >= 1 ? <TeamPokemon></TeamPokemon> : <>Não Tem</>}
+      {teamPokemon.length >= 1 ? (
+        <TeamPokemon teamPokemon={teamPokemon}></TeamPokemon>
+      ) : (
+        <></>
+      )}
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-const pokemonImage = "./public/images/pokemon-image.jpg";
+const pokemonImage = "/images/pokemon-image.jpg";
 
 function MainContainer() {
   return (

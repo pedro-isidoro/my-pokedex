@@ -6,7 +6,7 @@ const TeamPokemon = (teamPokemon) => {
   return (
     <div className="w-20 h-16 fixed z-30 bottom-0 right-0">
       <img
-        src="/src/images/master-ball-without-bg.png"
+        src="/images/master-ball-without-bg.png"
         alt="Masterball"
         className="w-[100%] hover:opacity-70 hover:cursor-pointer"
         onClick={() => setOpenModal(true)}

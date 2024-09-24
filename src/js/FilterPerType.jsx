@@ -46,6 +46,10 @@ export default function filteredPokemonsPerType(
               setPreviousPokemon(previousPokemon + 5);
               console.log("nextPokemon: ", nextPokemon)
           }}
+          Resetclick={() => {
+              setNextPokemon(5);
+              setPreviousPokemon(0);
+          }}
         />
       </div>
     </div>

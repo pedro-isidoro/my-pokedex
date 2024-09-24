@@ -7,13 +7,13 @@ export default function filteredPokemonsPerName(
   PokemonName
 ) {
   const [previousPokemon, setPreviousPokemon] = useState(0);
-  const [nextPokemon, setNextPokemon] = useState(5);
+  const [nextPokemon, setNextPokemon] = useState(4);
 
   const allPokemonsLength = allPokemons.filter((pokemon) => {
     const name = pokemon.data.name;
     return name.includes(PokemonName);
   }).length;
-  console.log(allPokemonsLength.length);
+  console.log(allPokemonsLength);
   return (
     <div className="w-full sm:w-[80%] md:w-[60%] xl:w-[50%] flex flex-col items-center gap-8">
       <ul className="w-full pt-4 flex flex-wrap justify-center gap-x-6 gap-y-4">
@@ -38,8 +38,8 @@ export default function filteredPokemonsPerName(
           nextPokemon={nextPokemon}
           click={() => {
             if (previousPokemon !== 0) {
-              setPreviousPokemon(previousPokemon - 6);
-              setNextPokemon(nextPokemon - 6);
+              setPreviousPokemon(previousPokemon - 5);
+              setNextPokemon(nextPokemon - 5);
             }
           }}
         />
@@ -51,9 +51,13 @@ export default function filteredPokemonsPerName(
             if (nextPokemon !== allPokemonsLength - 1) {
               // console.log("previousPokemon: ", previousPokemon);
               // console.log("nextPokemon: ", nextPokemon);
-              setNextPokemon(nextPokemon + 6);
-              setPreviousPokemon(previousPokemon + 6);
+              setNextPokemon(nextPokemon + 5);
+              setPreviousPokemon(previousPokemon + 5);
             }
+          }}
+          Resetclick={() => {
+            setNextPokemon(5);
+            setPreviousPokemon(0);
           }}
         />
       </div>

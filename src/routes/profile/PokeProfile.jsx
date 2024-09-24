@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import TypesStyle from "../../style/TypesStyle";
 import PokeInfo from "../../js/PokeInfo";
 import { addPokemonToCart } from "../../components/redux/pokemonCart/slice";
+import { usePokemonAbility } from "../../components/hook/pokemonsRequest";
 
 const PokeProfile = () => {
   //Com isso acesso o id dado no path
@@ -19,6 +20,11 @@ const PokeProfile = () => {
       // console.log("Pokemon Adicionado!!")
       console.log("Dados adicionados: ", data)
   };
+function callAbility(url) {
+  const { dataList } = usePokemonAbility(url);
+  // console.log("Ability: ", dataList);
+  return <p>{dataList}</p>;
+}
 
   return (
     <section className="w-full h-full flex flex-col items-center justify-center">
@@ -96,16 +102,19 @@ const PokeProfile = () => {
           )}
           <div className="w-full flex flex-col items-center gap-8">
             <h2 className="text-base font-semibold">Habilidades</h2>
-            <ul className="flex pb-4 gap-4">
+            <div className="flex flex-wrap pb-4 gap-4 gap-y-10 justify-center">
               {info.pokemonAbilites.map((moveData, key) => (
-                <li
+                <div
                   key={key}
-                  className="w-28 text-center bg-slate-200 text-slate-800 px-2 rounded-md"
+                  className="w-[12rem] h-auto text-center bg-slate-200 text-slate-800 rounded-md"
                 >
                   {moveData.ability.name}
-                </li>
+                  <div className="w-full h-full bg-amber-400 rounded-b-lg text-sm text-justify p-1">
+                    {callAbility(moveData.ability.url)}
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
           <hr className="w-[80%] h-2 border-white" />
           <div className="w-full flex flex-col items-center gap-8 px-4">

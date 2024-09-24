@@ -30,3 +30,25 @@ export const usePokemons = (index) => {
 
   return { dataList, loading, error };
 };
+
+export const usePokemonAbility = (url) => {
+  const [dataList, setDataList] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      axios
+        .get(url)
+        .then((res) => {
+          console.log(res.data.effect_entries[1].short_effect)
+          setDataList(res.data.effect_entries[1].short_effect);
+        });
+    } catch (err) {
+      console.log("Error: ", err);
+    }
+  }, [url]);
+  // console.log("DataList: ", dataList)
+
+  return { dataList, loading, error };
+};

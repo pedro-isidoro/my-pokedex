@@ -10,10 +10,10 @@
 - CSS
 - JS
 - React
-- Tailwind
-- React-Rounter-Dom
-- Redux
-- Axios
+- Tailwind (Estilização)
+- React-Rounter-Dom ( Navegação entre páginas )
+- Redux ( Armazenamento de dados )
+- Axios ( Requerimento da API )
 - API do Pokémon
 
 ## Desafios e Soluções

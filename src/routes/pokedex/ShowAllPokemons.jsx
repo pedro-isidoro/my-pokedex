@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Pokemon from "../components/pokemons/Pokemon";
-import filteredPokemonsPerName from "./FilterPerName";
-import filteredPokemonsPerType from "./FilterPerType";
-import { ForwardArrow, PreviousArrow } from "./VisualArrows";
+import Pokemon from "../../components/pokemons/Pokemon";
+import filteredPokemonsPerName from "../../js/FilterPerName";
+import filteredPokemonsPerType from "../../js/FilterPerType";
+import { ForwardArrow, PreviousArrow } from "../../js/VisualArrows";
 
 export default function showAllPokemons(allPokemons, typePokemon, namePokemon) {
   if (namePokemon.trim() !== "" && namePokemon.length > 0) {
